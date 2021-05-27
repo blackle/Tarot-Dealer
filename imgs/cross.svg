@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="192mm" height="92mm" version="1.1" viewBox="0 0 192 92" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-1.8 -3.4)">
+  <image transform="translate(28 49) rotate(some) translate(-26 -45)" x="0" y="0" width="53" height="90" image-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" xlink:href="#image#"/>
+  <image transform="translate(166 49) rotate(some) translate(-26 -45)" x="0" y="0" width="53" height="90" image-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" xlink:href="#image#"/>
+  <image transform="translate(98 49) rotate(all) translate(-26 -45)" x="0" y="0" width="53" height="90" image-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" xlink:href="#image#"/>
+ </g>
+</svg>
