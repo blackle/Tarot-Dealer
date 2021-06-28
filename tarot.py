@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import cairosvg
 import glob
 import re
@@ -8,37 +9,16 @@ import io
 def generate(path_to_assets, denom=5):
 	with open(path_to_assets+'/cross.svg', 'r') as file:
 		svg = file.read()
-	tarot = glob.glob(path_to_assets+"/tarot/*")
-	others = set(glob.glob(path_to_assets+"/*/*"))
-	others = others - set(tarot)
-	others = list(others)
+	tarot = [os.path.normpath(i) for i in glob.glob(path_to_assets+"/tarot/*")]
+	others = set([os.path.normpath(i) for i in glob.glob(path_to_assets+"/*/*")])
+	others = list(others - set(tarot))
 	random.shuffle(tarot)
 	random.shuffle(others)
 
 	def takecard(m):
 		if random.randint(0,denom) == 0:
-			card = others.pop()
-			print("================================")
-			print("Tarot: ")
-			print(tarot)
-			print("--------------------------------")
-			print("Others: ")
-			print(others)
-			print("--------------------------------")
-			print("Non-tarot card: " + card)
-			print("================================")
-			return card
-		card = tarot.pop()
-		print("================================")
-		print("Tarot: ")
-		print(tarot)
-		print("--------------------------------")
-		print("Others: ")
-		print(others)
-		print("--------------------------------")
-		print("Tarot card: " + card)
-		print("================================")
-		return card
+			return others.pop()
+		return tarot.pop()
 	def rndsome(m):
 		return random.choice(["rotate(0)", "rotate(180)"])
 	def rndall(m):
