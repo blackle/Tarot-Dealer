@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import cairosvg
 import glob
 import re
@@ -8,9 +9,9 @@ import io
 def generate(path_to_assets):
 	with open(path_to_assets+'/cross.svg', 'r') as file:
 		svg = file.read()
-	tarot = glob.glob(path_to_assets+"/tarot/*")
-	others = glob.glob(path_to_assets+"/*/*")
-	others = list(set(others) - set(tarot))
+	tarot = [os.path.normpath(i) for i in glob.glob(path_to_assets+"/tarot/*")]
+	others = set([os.path.normpath(i) for i in glob.glob(path_to_assets+"/*/*")])
+	others = list(others - set(tarot))
 	random.shuffle(tarot)
 	random.shuffle(others)
 
