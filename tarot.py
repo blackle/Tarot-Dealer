@@ -5,7 +5,7 @@ import re
 import random
 import io
 
-def generate(path_to_assets):
+def generate(path_to_assets, denom=5):
 	with open(path_to_assets+'/cross.svg', 'r') as file:
 		svg = file.read()
 	tarot = glob.glob(path_to_assets+"/tarot/*")
@@ -15,9 +15,13 @@ def generate(path_to_assets):
 	random.shuffle(others)
 
 	def takecard(m):
-		if random.randint(0,5) == 0:
-			return others.pop()
-		return tarot.pop()
+		if random.randint(0,denom) == 0:
+			card = others.pop()
+			print("Non-tarot card: " + card)
+			return card
+		card = tarot.pop()
+		print("Tarot card: " + card)
+		return card
 	def rndsome(m):
 		return random.choice(["rotate(0)", "rotate(180)"])
 	def rndall(m):
