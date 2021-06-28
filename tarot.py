@@ -6,7 +6,7 @@ import re
 import random
 import io
 
-def generate(path_to_assets, denom=5):
+def generate(path_to_assets):
 	with open(path_to_assets+'/cross.svg', 'r') as file:
 		svg = file.read()
 	tarot = [os.path.normpath(i) for i in glob.glob(path_to_assets+"/tarot/*")]
@@ -16,7 +16,7 @@ def generate(path_to_assets, denom=5):
 	random.shuffle(others)
 
 	def takecard(m):
-		if random.randint(0,denom) == 0:
+		if random.randint(0,5) == 0:
 			return others.pop()
 		return tarot.pop()
 	def rndsome(m):
